@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Update Student Record</title>
+</head>
+
+<body>
+    <%- include ('header.ejs')%>
+    <form action="/update" method="post" class="input mb-3 mx-3 container mx-5">
+        <h6 >Update Result</h6>
+        <div class="row my-3">
+            <label for="rollno" class="col-sm-2 col-form-label">Roll No</label>
+            <div class="col-sm-10">
+                <input type="number" value="<%= student.roll_no%>" readonly id="rollno" name="rollno">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" value="<%= student.username%>" id="name" name="name">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+            <div class="col-sm-10">
+                <input type="date" value="<%= student.dob%>" id="dob" name="dob">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="formFileMultiple" class="col-sm-2 col-form-label">Score</label>
+            <div class="col-sm-10">
+                <input type="number" value="<%= student.score%>" id="score" name="score">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary right" id="submit" >Submit</button>
+
+    </form>
+</body>
+
+</html>

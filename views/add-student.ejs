@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Add Student Record</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+
+<body>
+    <%- include ('header.ejs')%>
+    <form class="input mb-3 mx-3 container mx-5" method="post" action="/student/add/">
+        <% try {
+            if(message) {%>
+            <p style="color: red;"><%= message%></p>
+            <%}
+        } catch (error) {
+        }%>
+        <a href="/student/records">Back</a>
+        <h6 style="text-align: center; font-weight: bold; font-size: 30px;">Add new Result</h6>
+        <div class="container d-flex justify-content-center align-items-center flex-column" style="height: 70vh;">
+        <div class="row my-3">
+            <label for="rollno" class="col-sm-4 col-form-label">Roll No:</label>
+            <div class="col-sm-8">
+                <input type="number" name="rollno" id="rollno" required>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="name" class="col-sm-4 col-form-label">Name:</label>
+            <div class="col-sm-8">
+                <input type="text" name="name" id="name" required >
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="dob" class="col-sm-4 col-form-label">Date Of Birth:</label>
+            <div class="col-sm-8">
+                <input id="text" name="dob" type="date" required
+                    >
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <label for="formFileMultiple" class="col-sm-4 col-form-label">Score:</label>
+            <div class="col-sm-8">
+                <input type="number" name="score" id="score" required >
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary right" id="submit" 
+            >Submit</button>
+        </div>
+
+    </form>
+</body>
+
+</html>

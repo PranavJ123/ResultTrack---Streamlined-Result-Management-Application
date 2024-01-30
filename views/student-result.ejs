@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <%- include ('header.ejs')%>
+    <a href="/student/login" class="p-5">Back</a>
+<% if(studentResult == null) {%>
+    <div class="d-flex justify-content-center align-items-center" style="height: 80vh; overflow: hidden;">No Record Found</div>
+    <%} else {%>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 80vh; overflow: hidden;">
+        <div>
+            <h4 class="d-flex justify-content-center">Result</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Roll No.: &nbsp;</td>
+                        <td><%=studentResult.roll_no%></td>
+                    </tr>
+                    <tr>
+                        <td>Name: &nbsp;</td>
+                        <td><%=studentResult.username%></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth: &nbsp;</td>
+                        <td><%=studentResult.dob%></td>
+                    </tr>
+                    <tr>
+                        <td>Score: &nbsp;</td>
+                        <td><%=studentResult.score%></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%}%>
+</body>
+</html>
